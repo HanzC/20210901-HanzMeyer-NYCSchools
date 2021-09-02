@@ -15,6 +15,7 @@
 		9019453426E0119A007AB4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9019453226E0119A007AB4D2 /* LaunchScreen.storyboard */; };
 		9019453F26E0119B007AB4D2 /* NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9019453E26E0119B007AB4D2 /* NYCSchoolsTests.swift */; };
 		9019454A26E0119B007AB4D2 /* NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9019454926E0119B007AB4D2 /* NYCSchoolsUITests.swift */; };
+		9019455926E018DB007AB4D2 /* ConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9019455826E018DB007AB4D2 /* ConnectionTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		9019454526E0119B007AB4D2 /* NYCSchoolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYCSchoolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9019454926E0119B007AB4D2 /* NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolsUITests.swift; sourceTree = "<group>"; };
 		9019454B26E0119B007AB4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9019455726E018DA007AB4D2 /* NYCSchoolsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NYCSchoolsTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		9019455826E018DB007AB4D2 /* ConnectionTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				9019453E26E0119B007AB4D2 /* NYCSchoolsTests.swift */,
+				9019455826E018DB007AB4D2 /* ConnectionTest.m */,
 				9019454026E0119B007AB4D2 /* Info.plist */,
+				9019455726E018DA007AB4D2 /* NYCSchoolsTests-Bridging-Header.h */,
 			);
 			path = NYCSchoolsTests;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 					};
 					9019453926E0119B007AB4D2 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 						TestTargetID = 9019452326E0119A007AB4D2;
 					};
 					9019454426E0119B007AB4D2 = {
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9019453F26E0119B007AB4D2 /* NYCSchoolsTests.swift in Sources */,
+				9019455926E018DB007AB4D2 /* ConnectionTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,13 +373,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -421,12 +429,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -439,6 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V48EBS92V9;
 				INFOPLIST_FILE = NYCSchools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V48EBS92V9;
 				INFOPLIST_FILE = NYCSchools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,10 +485,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V48EBS92V9;
 				INFOPLIST_FILE = NYCSchoolsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +497,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcm.NYCSchoolsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NYCSchoolsTests/NYCSchoolsTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYCSchools.app/NYCSchools";
@@ -496,10 +510,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V48EBS92V9;
 				INFOPLIST_FILE = NYCSchoolsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcm.NYCSchoolsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NYCSchoolsTests/NYCSchoolsTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYCSchools.app/NYCSchools";
