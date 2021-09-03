@@ -21,7 +21,7 @@
                                 <rect key="frame" x="10" y="109" width="394" height="743"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NYT Best Sellers: Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qq3-0h-bjR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NYC Schools" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qq3-0h-bjR">
                                 <rect key="frame" x="10" y="44" width="394" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ybd-ZI-w4O"/>

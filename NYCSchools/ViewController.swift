@@ -6,62 +6,6 @@
 //
 
 import UIKit
-/*
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
-    @IBOutlet private var tableView: UITableView!
-    
-    //var json = NSDictionary()
-    //var json: NSDictionary = [:]
-    //var json : NSArray = []
-    //let json : NSDictionary = [:]
-    //let json: [AnyHashable] = []
-    //var json: [AnyHashable : Any]? = nil
-    var json: [AnyObject] = []
-    //var json: [AnyHashable : Any]?
-    
-    var spinner: UIActivityIndicatorView?
-
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        // Set Table View Properties
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        getDataFrom_NYC_High_Schools()
-    }
-
-    func getDataFrom_NYC_High_Schools()
-    {
-
-        
-    }
-
-    
-    // MARK: - TableView Delegates
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let CellIdentifier = "cell"
-        let cell = tableView.cellForRow(at: indexPath)!
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        // Return the number of rows in the section
-        //return (json["results"] as? [AnyHashable : Any])?["books"].count()
-        //return (json["results"] as? [AnyHashable : Any])!["books"].count()
-        //return json["results"][0][""] as! Int
-        //print(((json!["results"] as! [AnyHashable : Any])["books"] as! Int))
-        //return ((json!["results"] as! [AnyHashable : Any])["books"] as! Int)
-        return self.json.count
-    }
-}
-*/
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate
 {
@@ -272,6 +216,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             cell = UITableViewCell(style: .default, reuseIdentifier: CellIdentifier)
             cell?.textLabel?.text = self.tableArray[indexPath.row]
+            cell?.textLabel?.adjustsFontSizeToFitWidth = true
         }
         
         return cell!
@@ -295,6 +240,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         parseSATJSON()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 50
+    }
+    
+    
+    // MARK: - Custom View Controller
     func presentCustomViewController(_ readScore: String, _ writingScore: String, _ mathScore: String)
     {
         // Create a view controller
@@ -306,25 +258,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Create Main Label
         let description = UILabel(frame: CGRect(x: self.tableView.center.x - 100, y: 10, width: 200, height: 40))
         description.font = UIFont(name: "Arial-BoldMT", size: 20)
-        description.backgroundColor = UIColor.white
+        description.backgroundColor = UIColor.clear
         description.text = "SAT Scores"
         description.numberOfLines = 1
         description.textAlignment = .center
         view.addSubview(description)
         
         //1A. Create Reading Score Label
-        let readScoreLbl = UILabel(frame: CGRect(x: 10, y: description.frame.maxY + 20, width: 150, height: 40))
+        let readScoreLbl = UILabel(frame: CGRect(x: 10, y: description.frame.maxY + 30, width: 150, height: 40))
         readScoreLbl.font = UIFont(name: "Arial", size: 16)
-        readScoreLbl.backgroundColor = UIColor.white
+        readScoreLbl.backgroundColor = UIColor.clear
         readScoreLbl.text = "Reading Score: "
         readScoreLbl.numberOfLines = 1
         readScoreLbl.textAlignment = .left
         view.addSubview(readScoreLbl)
         
         //1B. Create Reading Score Value
-        let readScoreValue = UILabel(frame: CGRect(x: readScoreLbl.frame.maxX + 20, y: description.frame.maxY + 20, width: 100, height: 40))
+        let readScoreValue = UILabel(frame: CGRect(x: readScoreLbl.frame.maxX + 20, y: description.frame.maxY + 30, width: 100, height: 40))
         readScoreValue.font = UIFont(name: "Arial", size: 16)
-        readScoreValue.backgroundColor = UIColor.white
+        readScoreValue.backgroundColor = UIColor.clear
         readScoreValue.text = readScore
         readScoreValue.numberOfLines = 1
         readScoreValue.textAlignment = .left
@@ -335,7 +287,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //2A. Create Writing Score Label
         let writeScoreLbl = UILabel(frame: CGRect(x: 10, y: readScoreLbl.frame.maxY + 20, width: 150, height: 40))
         writeScoreLbl.font = UIFont(name: "Arial", size: 16)
-        writeScoreLbl.backgroundColor = UIColor.white
+        writeScoreLbl.backgroundColor = UIColor.clear
         writeScoreLbl.text = "Writing Score: "
         writeScoreLbl.numberOfLines = 1
         writeScoreLbl.textAlignment = .left
@@ -344,7 +296,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //2B. Create Writing Score Value
         let writeScoreValue = UILabel(frame: CGRect(x: writeScoreLbl.frame.maxX + 20, y: readScoreValue.frame.maxY + 20, width: 100, height: 40))
         writeScoreValue.font = UIFont(name: "Arial", size: 16)
-        writeScoreValue.backgroundColor = UIColor.white
+        writeScoreValue.backgroundColor = UIColor.clear
         writeScoreValue.text = writingScore
         writeScoreValue.numberOfLines = 1
         writeScoreValue.textAlignment = .left
@@ -355,7 +307,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //3A. Create Math Score Label
         let mathScoreLbl = UILabel(frame: CGRect(x: 10, y: writeScoreLbl.frame.maxY + 20, width: 150, height: 40))
         mathScoreLbl.font = UIFont(name: "Arial", size: 16)
-        mathScoreLbl.backgroundColor = UIColor.white
+        mathScoreLbl.backgroundColor = UIColor.clear
         mathScoreLbl.text = "Math Score: "
         mathScoreLbl.numberOfLines = 1
         mathScoreLbl.textAlignment = .left
@@ -364,7 +316,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //3B. Create Writing Score Value
         let mathScoreValue = UILabel(frame: CGRect(x: mathScoreLbl.frame.maxX + 20, y: writeScoreValue.frame.maxY + 20, width: 100, height: 40))
         mathScoreValue.font = UIFont(name: "Arial", size: 16)
-        mathScoreValue.backgroundColor = UIColor.white
+        mathScoreValue.backgroundColor = UIColor.clear
         mathScoreValue.text = mathScore
         mathScoreValue.numberOfLines = 1
         mathScoreValue.textAlignment = .left
@@ -375,47 +327,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
 }
-
-//extension ViewController
-//{
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-//
-//
-//        cell.textLabel?.text = self.tableArray[indexPath.row]
-//
-//        return cell
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return self.tableArray.count
-//
-//    }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(self.tableArray[indexPath.row])
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
-//
-//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//
-//        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-//            // delete item at indexPath
-//            self.tableArray.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            print(self.tableArray)
-//        }
-//
-//        let share = UITableViewRowAction(style: .default, title: "Share") { (action, indexPath) in
-//            // share item at indexPath
-//            print("I want to share: \(self.tableArray[indexPath.row])")
-//        }
-//
-//        share.backgroundColor = UIColor.lightGray
-//
-//        return [delete, share]
-//
-//    }
-//
-//}

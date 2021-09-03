@@ -53,22 +53,6 @@
         if (json.count > 0)
         {
             NSLog(@" *** JSON Data: %@", json);
-//            NSLog(@" *** JSON Key-results count: %lu", (unsigned long)[[json objectForKey:@"results"] count]); // Log results  count.
-//            NSLog(@"=============================");
-//
-//            for (int x = 0; x < [[[json objectForKey:@"results"] objectForKey:@"books"] count]; x++)
-//            {
-//                //NSLog(@" *** JSON Key-results: %@", [[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x]); // Log all books.
-//                NSLog(@" *** JSON Key-results: Author:      %@", [[[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x] objectForKey:@"author"]);         // Log all Authors.
-//                NSLog(@" *** JSON Key-results: Image:       %@", [[[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x] objectForKey:@"book_image"]);     // Log all Book Images.
-//                NSLog(@" *** JSON Key-results: Contributor: %@", [[[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x] objectForKey:@"contributor"]);    // Log all Contributors.
-//                NSLog(@" *** JSON Key-results: Description: %@", [[[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x] objectForKey:@"description"]);    // Log all Descriptions.
-//                NSLog(@" *** JSON Key-results: Publisher:   %@", [[[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x] objectForKey:@"publisher"]);      // Log all Publishers.
-//                NSLog(@" *** JSON Key-results: Rank:        %@", [[[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x] objectForKey:@"rank"]);           // Log all Ranks.
-//                NSLog(@" *** JSON Key-results: Title:       %@", [[[[json objectForKey:@"results"] objectForKey:@"books"] objectAtIndex:x] objectForKey:@"title"]);          // Log all Titles.
-//                NSLog(@"===\n\n\n===");
-//                // Get Best Sellers Date & Convert to Date Format
-//            }
         }
         
 
